@@ -1,0 +1,4 @@
+rootProject.name = 'ExEmailDemo'
+
+include("ex-email")
+include("simple")

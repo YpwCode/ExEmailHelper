@@ -1,0 +1,27 @@
+server:
+  port: 9999
+spring:
+  mail:
+    default-encoding: utf-8
+    host: ${my.email.host}
+    username: ${my.email.username}
+    password: ${my.email.password}
+    port: 465
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
+          socketFactoryClass: javax.net.ssl.SSLSocketFactory
+        debug: true
+    protocol: smtp
+  profiles:
+    active: dev
+
+#my:
+#  project-name: Result 项目
+#  email:
+#    host: smtp.163.com
+#    username: from@163.com
+#    password: xxx
+#    global-to: to@163.com

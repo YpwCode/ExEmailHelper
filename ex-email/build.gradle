@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.ypw.code.java'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenLocal()
+    maven {
+        url = uri('https://maven.aliyun.com/repository/public')
+    }
+    maven {
+        url = uri('http://repo.maven.apache.org/maven2')
+    }
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'org.springframework.boot:spring-boot-starter-web:2.4.5'
+    compileOnly 'org.springframework.boot:spring-boot-starter-mail:2.4.5'
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor:2.4.5'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.4.5'
+}
+
+test {
+    useJUnitPlatform()
+}
